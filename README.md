@@ -17,7 +17,7 @@
 ![Контекстная диаграмма](https://github.com/IvanVolkogonov/iwan_/blob/main/photo_2024-11-01_19-32-56.jpg)
 
 ## Декомпозиция
-![Декомпозиция](https://github.com/IvanVolkogonov/iwan_/blob/main/photo_2024-11-01_19-32-50.jpg)
+![Декомпозиция](https://github.com/IvanVolkogonov/iwan_/blob/main/photo_2024-11-01_19-32-50.jpg)](https://github.com/meowqqhxd/nt/blob/программммм-фото/1.jpg)
 
 
 
