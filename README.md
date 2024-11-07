@@ -17,7 +17,7 @@
 ![Контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg)
 
 ## Декомпозиция
-![Декомпозиция](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/main/Decompoziciya.png)
+![Декомпозиция](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg)
 
 
 
