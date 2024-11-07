@@ -14,17 +14,17 @@
 В данном разделе предоставлены наброски нашего бизнес-плана по разработке программы генератора паролей, выполненые при помощи компьютерных технологий:
 
 ## Контекстная диаграмма
-![Контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg)
+![Контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg)
 
 ## Декомпозиция
-![Декомпозиция](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg)
+![Декомпозиция](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg)
 
 
 
 
 - **Описание проекта**: 
 Нашей главной целью было создание программы для генерации паролей. Для начала нам необходимо было создать IDEF0, для наглядного показа нашего проекта, как более легкого и доступного способа донесения информации. 
-Нами было создано две диаграммы: [контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg) и [декомпозиция.](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg)
+Нами было создано две диаграммы: [контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg) и [декомпозиция.](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg)
 
 ## Контекстная диаграмма
 
