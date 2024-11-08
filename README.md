@@ -14,21 +14,22 @@
 В данном разделе предоставлены наброски нашего бизнес-плана по разработке программы генератора паролей, выполненые при помощи компьютерных технологий:
 
 ## Контекстная диаграмма
-![Контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg)
+![Контекстная диаграмма](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/main/Compoziciya.png)
 
 ## Декомпозиция
-![Декомпозиция](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg)
+![Декомпозиция](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/main/Decompoziciya.png)
+
 
 
 
 
 - **Описание проекта**: 
 Нашей главной целью было создание программы для генерации паролей. Для начала нам необходимо было создать IDEF0, для наглядного показа нашего проекта, как более легкого и доступного способа донесения информации. 
-Нами было создано две диаграммы: [контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg) и [декомпозиция.](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg)
+Нами было создано две диаграммы: [контекстная диаграмма](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/main/Compoziciya.png) и [декомпозиция.](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/main/Decompoziciya.png)
 
 ## Контекстная диаграмма
 
- Для начала остановимся на контекстной, что она вообще из себя представляет. [Контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/2.jpg) – это диаграмма, которая описывает систему на уровне «черного ящика», то есть только ее внешние свойства, не углубляясь внутрь программы. Нам необходимо было создать контекстную диаграмму для описания программы генерации паролей, поэтому очевидным становится то, что центром нашей диаграммы является блок с названием **«сгенерировать пароль»**. Далее остается только две основные вещи:
+ Для начала остановимся на контекстной, что она вообще из себя представляет. [Контекстная диаграмма](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/main/Compoziciya.png) – это диаграмма, которая описывает систему на уровне «черного ящика», то есть только ее внешние свойства, не углубляясь внутрь программы. Нам необходимо было создать контекстную диаграмму для описания программы генерации паролей, поэтому очевидным становится то, что центром нашей диаграммы является блок с названием **«сгенерировать пароль»**. Далее остается только две основные вещи:
 Данные, которые входят в блок (являются важными элементами для создания самой программы) и данные, которые мы получаем на выходе создания программы.
 
 ```1. Данные, которые входят в блок.```
@@ -42,7 +43,7 @@
 ## Декомпозиция
 
 Для начала стоит разобраться что же такое «декомпозиция»?
-[Декомпозиция](https://github.com/meowqqhxd/ychebnaya/blob/main/1.jpg) – это процесс в программировании, предусмотренный для разбиение сложной системы или задачи, на более понятные и простые. Грубо говоря, сейчас мы углубляемся внутрь создания программы. 
+Декомпозиция – это процесс в программировании, предусмотренный для разбиение сложной системы или задачи, на более понятные и простые. Грубо говоря, сейчас мы углубляемся внутрь создания программы. 
 Создав контекстную диаграмму, будет гораздо проще понимать, что конкретно нам предстоит сделать, поэтому для начала необходимо было выделить основные этапы. У нас их получилось четыре, давайте разберем.
 
 ```1.  Ввести условие генерации.```
@@ -101,17 +102,46 @@
 ```go
 Public Class Form1
 
-    Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles BtnGenerate.Clickе проверки.
+    Private Sub BtnGenerate_Click(sender As Object, e As EventArgs) Handles BtnGenerate.Click
+        Dim passwordLength As Integer = CInt(NumericUpDown1.Value)
+        Dim useUpperCase As Boolean = CheckBoxUpperCase.Checked
+        Dim useLowerCase As Boolean = CheckBoxLowerCase.Checked
+        Dim useNumbers As Boolean = CheckBoxNumbers.Checked
+        Dim useSpecialChars As Boolean = CheckBoxSpecialChars.Checked
+```
+Сразу после объявления расположена часть кода, отвечающая за предотвращение ошибок, т.е. если пользователь не выберет ни одной вариации конечного пароля, он получит уведомление о том, что необходимо выбрать хотя бы один параметр.
 
-- **Ссылка на ветку**: [Ссылка на ветку с бизнес-планом](https://github.com/meowqqhxd/nt/tree/main)
+```go
+        If Not (useUpperCase Or useLowerCase Or useNumbers Or useSpecialChars) Then
+            MessageBox.Show("Выберите хотя бы один тип символа для генерации пароля.")
+            Return
+        End If
+```
+Следующим делом создаём функцию “Сгенерировать пароль” 
+В данной функции указываем на положение переключателей CheckBox, а так же задаём перечень символов под определённый переключатель 
 
-## Задача 2: Генератор Паролей
+```go
+    Private Function GeneratePassword(length As Integer, upper As Boolean, lower As Boolean, numbers As Boolean, special As Boolean) As String
+        Dim allowedChars As New StringBuilder()
 
-В данной задаче была разработана программа, выполняющая функции генератора паролей. Она позволяет генерировать безопасные и случайные пароли.
+        If upper Then allowedChars.Append("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        If lower Then allowedChars.Append("abcdefghijklmnopqrstuvwxyz")
+        If numbers Then allowedChars.Append("0123456789")
+        If special Then allowedChars.Append("!@#$%^&*()-_=+[]{}|;:,.<>?")
+```
 
-## Функционал: 
-### Программа сама генерирует пароль взависимости от желаний пользователя. Пользователь сам может выбирать какой вид пароль будет иметь в итоге. Существует несколько переключателей:
-- #### 1) Использование Заглавных букв.
-- #### 2) Использование Строчных букв.
-- #### 3) Использование Цифр.
-- #### 4) Использование Спец. символов.
+В конечном итоге связываем кнопку “Копировать” с кодом и делаем её активной
+
+```go
+    Private Sub BtnCopy_Click(sender As Object, e As EventArgs) Handles BtnCopy.Click
+        Clipboard.SetText(TextBoxPassword.Text)
+        MessageBox.Show("Пароль скопирован в буфер обмена.")
+    End Sub
+```
+
+Подробнее увидеть сам код можно [Здесь](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/ListingCode/Listing_Gen_Pass.txt)
+
+
+## Задача 4: **``Фото работающей программы``**
+
+Можно посмотреть в отдельной ветке [Тут](https://github.com/IvanVolkogonov/y4ebnaya_pr/blob/WorkProgrammPhoto/Work_program.png).
