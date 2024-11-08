@@ -14,7 +14,7 @@
 В данном разделе предоставлены наброски нашего бизнес-плана по разработке программы генератора паролей, выполненые при помощи компьютерных технологий:
 
 ## Контекстная диаграмма
-![Контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/Compozic.jpg)
+![Контекстная диаграмма](https://github.com/meowqqhxd/ychebnaya/blob/main/%D0%94%D0%B5%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%B7%D0%B8%D1%86%D0%B8%D1%8F.jpg)
 
 ## Декомпозиция
 ![Декомпозиция](https://github.com/meowqqhxd/ychebnaya/blob/main/Decompoz.jpg)
